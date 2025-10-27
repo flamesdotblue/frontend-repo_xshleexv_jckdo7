@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SidebarNav from "./components/SidebarNav.jsx";
 import TopBar from "./components/TopBar.jsx";
-import SummaryCards from "./components/SummaryCards.jsx";
-import MainGrid from "./components/MainGrid.jsx";
+import Hero3D from "./components/Hero3D.jsx";
+import DashboardContent from "./components/DashboardContent.jsx";
 
 function Section({ title, children, actions }) {
   return (
@@ -29,12 +29,8 @@ export default function App() {
           <main className="p-4 md:p-6">
             {active === "dashboard" && (
               <>
-                <Section title="Overview">
-                  <SummaryCards />
-                </Section>
-                <Section title="Operations">
-                  <MainGrid />
-                </Section>
+                <Hero3D onPrimaryAction={() => setActive("scenario")} />
+                <DashboardContent />
                 <Section
                   title="Run Optimisation"
                   actions={<button className="px-3 py-2 rounded-md bg-sky-600 text-white hover:bg-sky-700">Run</button>}

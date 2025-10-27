@@ -8,8 +8,10 @@ function StatCard({ title, value, change, icon: Icon, tone = "info" }) {
     danger: "bg-rose-50 text-rose-700 dark:bg-rose-900/20 dark:text-rose-200",
   };
   return (
-    <div className="rounded-lg border border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-950">
-      <div className="flex items-center justify-between">
+    <div className="group relative rounded-xl border border-slate-200/70 dark:border-slate-800/70 bg-white/70 dark:bg-slate-950/60 backdrop-blur p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-10px_rgba(2,6,23,0.35)]">
+      {/* subtle gradient ring */}
+      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent group-hover:ring-sky-500/30" />
+      <div className="flex items-center justify-between relative">
         <div>
           <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{title}</p>
           <p className="mt-2 text-2xl font-semibold text-slate-900 dark:text-slate-100">{value}</p>
